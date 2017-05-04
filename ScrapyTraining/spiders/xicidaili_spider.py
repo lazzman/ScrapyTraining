@@ -32,8 +32,14 @@ class XiciSpider(scrapy.Spider):
     name = 'xici'
     allowed_domains = ["www.xicidaili.com"]
     start_urls = [
-        "http://www.xicidaili.com/nn/1"
+    #    "http://www.xicidaili.com/nn/1"
     ]
+
+    def start_requests(self):
+        for i in range(1, 3): # 取前两页，共200条代理
+            url = 'http://www.xicidaili.com/nn/%d'%i
+            req = scrapy.Request(url)
+            yield req
     
     def parse(self, response):
         table = response.xpath('//table[@id="ip_list"]')[0] # 返回值是数组，取当中的第一个select对象
