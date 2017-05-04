@@ -14,7 +14,10 @@ Scrapy1.3.3
 
 控制台（或shell切到项目路径下，执行命令）
 
-1. 西刺国内高匿代理
+1. 查看所有爬虫
+`scrapy list`
+
+2. 西刺国内高匿代理
 `scrapy crawl xici -o ProxyIps.json`
 
 
